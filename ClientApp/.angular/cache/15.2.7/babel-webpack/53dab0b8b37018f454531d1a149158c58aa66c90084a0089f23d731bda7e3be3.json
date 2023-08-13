@@ -1,0 +1,27 @@
+{
+  "ast": null,
+  "code": "import { HttpHeaders } from \"@angular/common/http\";\nimport * as i0 from \"@angular/core\";\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\nexport class ClientesService {\n  constructor() {\n    this.url = \"https://localhost:5001/api/clientes\";\n  }\n}\nClientesService.ɵfac = function ClientesService_Factory(t) {\n  return new (t || ClientesService)();\n};\nClientesService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: ClientesService,\n  factory: ClientesService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAAQA,WAAW,QAAO,sBAAsB;;AAEhD,MAAMC,WAAW,GAAG;EAClBC,OAAO,EAAE,IAAIF,WAAW,CAAC;IACvB,cAAc,EAAE;GACjB;CACF;AAID,OAAM,MAAOG,eAAe;EAI1BC;IAFA,QAAG,GAAW,qCAAqC;EAEnC;;AAJLD,eAAe;mBAAfA,eAAe;AAAA;AAAfA,eAAe;SAAfA,eAAe;EAAAE,SAAfF,eAAe;EAAAG,YAFd;AAAM",
+    "names": [
+      "HttpHeaders",
+      "HttpOptions",
+      "headers",
+      "ClientesService",
+      "constructor",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\clientes.service.ts"
+    ],
+    "sourcesContent": [
+      "import { Injectable } from '@angular/core';\nimport {HttpHeaders} from \"@angular/common/http\";\n\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClientesService {\n\n  url: string = \"https://localhost:5001/api/clientes\";\n\n  constructor() { }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

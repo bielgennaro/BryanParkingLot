@@ -1,0 +1,63 @@
+<div class="container p-5">
+  <div class="border border-light rounded p-5">
+    <button type="button" class="btn btn-sm btn-secondary">Novo carro</button>
+  </div>
+
+  <hr/>
+
+  <table class="table table-striped table-hover table-sm" *ngIf="carros">
+    <tr class="thead-light">
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Placa</th>
+      <th>Estacionado</th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let carro of carros">
+      <td>{{carro.marca}}</td>
+      <td>{{carro.modelo}}</td>
+      <td>{{carro.placa}}</td>
+      <td>{{carro.estacionado}}</td>
+      <td>{{carro.clienteId}}</td>
+      <td>
+        <button type="button" class="btn btn-sm btn-outline-info">Atualizar</button> |
+        <button type="button" class="btn btn-sm btn-outline-info">Excluir</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-sm btn-light">Editar</button>
+        <button type="button" class="btn btn-sm btn-danger">Excluir</button>
+      </td>
+  </table>
+</div>
+
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div *ngIf="formulario" class="col-6 border rounded p-5 shadow">
+    <h6 class="text-center">{{tituloFormulario}}</h6>
+    <hr/>
+
+    <form [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
+      <div class="form-group">
+        <label>Marca</label>
+        <input class="form-control form-control-sm" formControlName="marca" type="text">
+      </div>
+      <div class="form-group">
+        <label>Modelo</label>
+        <input class="form-control form-control-sm" formControlName="modelo" type="text">
+      </div>
+      <div class="form-group">
+        <label>Placa</label>
+        <input class="form-control form-control-sm" formControlName="placa" type="text">
+      </div>
+      <div class="form-group">
+        <label>Estacionado(vaga)</label>
+        <input class="form-control form-control-sm" formControlName="estacionado" placeholder="Exemplo: B4" type="text" placeholder="Sim">
+      </div>
+      <div class="text-center mt-4 m-auto">
+        <button class="btn btn-sm btn-secondary" type="submit">Registrar</button>
+        <button class="btn btn-sm btn-light ml-2" type="button">Voltar</button>
+      </div>
+    </form>
+  </div>
+</div>

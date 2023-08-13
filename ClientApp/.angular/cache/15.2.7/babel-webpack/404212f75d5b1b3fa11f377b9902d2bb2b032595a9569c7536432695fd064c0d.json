@@ -1,0 +1,41 @@
+{
+  "ast": null,
+  "code": "import { FormControl, FormGroup } from \"@angular/forms\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common\";\nfunction ClientesComponent_div_2_Template(rf, ctx) {\n  if (rf & 1) {\n    i0.ɵɵelement(0, \"div\", 3);\n  }\n}\nexport class ClientesComponent {\n  constructor() {\n    this.tituloFormulario = \"Formulario de Clientes\";\n  }\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      nome: new FormControl(null),\n      sobrenome: new FormControl(null),\n      documento: new FormControl(null),\n      pais: new FormControl(null),\n      endereco: new FormControl(null),\n      carro: new FormControl(null),\n      carroId: new FormControl(null)\n    });\n  }\n}\nClientesComponent.ɵfac = function ClientesComponent_Factory(t) {\n  return new (t || ClientesComponent)();\n};\nClientesComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({\n  type: ClientesComponent,\n  selectors: [[\"app-clientes\"]],\n  decls: 3,\n  vars: 1,\n  consts: [[1, \"container\", \"p-5\"], [1, \"row\"], [\"class\", \"col-6 border-light rounded p-5 shadow\", 4, \"ngIf\"], [1, \"col-6\", \"border-light\", \"rounded\", \"p-5\", \"shadow\"]],\n  template: function ClientesComponent_Template(rf, ctx) {\n    if (rf & 1) {\n      i0.ɵɵelementStart(0, \"div\", 0)(1, \"div\", 1);\n      i0.ɵɵtemplate(2, ClientesComponent_div_2_Template, 1, 0, \"div\", 2);\n      i0.ɵɵelementEnd()();\n    }\n    if (rf & 2) {\n      i0.ɵɵadvance(2);\n      i0.ɵɵproperty(\"ngIf\", ctx.formulario);\n    }\n  },\n  dependencies: [i1.NgIf],\n  styles: [\"\\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */\"]\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAAQA,WAAW,EAAEC,SAAS,QAAO,gBAAgB;;;;;ICCjDC,yBAEM;;;ADIV,OAAM,MAAOC,iBAAiB;EAI5BC;IADA,qBAAgB,GAAW,wBAAwB;EACnC;EAEhBC,QAAQ;IACN,IAAI,CAACC,UAAU,GAAG,IAAIL,SAAS,CAAC;MAC9BM,IAAI,EAAE,IAAIP,WAAW,CAAC,IAAI,CAAC;MAC3BQ,SAAS,EAAE,IAAIR,WAAW,CAAC,IAAI,CAAC;MAChCS,SAAS,EAAE,IAAIT,WAAW,CAAC,IAAI,CAAC;MAChCU,IAAI,EAAE,IAAIV,WAAW,CAAC,IAAI,CAAC;MAC3BW,QAAQ,EAAE,IAAIX,WAAW,CAAC,IAAI,CAAC;MAC/BY,KAAK,EAAE,IAAIZ,WAAW,CAAC,IAAI,CAAC;MAC5Ba,OAAO,EAAE,IAAIb,WAAW,CAAC,IAAI;KAC9B,CAAC;EACJ;;AAhBWG,iBAAiB;mBAAjBA,iBAAiB;AAAA;AAAjBA,iBAAiB;QAAjBA,iBAAiB;EAAAW;EAAAC;EAAAC;EAAAC;EAAAC;IAAA;MCR9BhB,8BAA2B;MAEvBA,kEAEM;MACRA,iBAAM;;;MAHgDA,eAAgB;MAAhBA,qCAAgB",
+    "names": [
+      "FormControl",
+      "FormGroup",
+      "i0",
+      "ClientesComponent",
+      "constructor",
+      "ngOnInit",
+      "formulario",
+      "nome",
+      "sobrenome",
+      "documento",
+      "pais",
+      "endereco",
+      "carro",
+      "carroId",
+      "selectors",
+      "decls",
+      "vars",
+      "consts",
+      "template"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\components\\clientes\\clientes.component.ts",
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\components\\clientes\\clientes.component.html"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {FormControl, FormGroup} from \"@angular/forms\";\n\n@Component({\n  selector: 'app-clientes',\n  templateUrl: './clientes.component.html',\n  styleUrls: ['./clientes.component.css']\n})\nexport class ClientesComponent implements OnInit {\n\n  formulario: any;\n  tituloFormulario: string = \"Formulario de Clientes\";\n  constructor() { }\n\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      nome: new FormControl(null),\n      sobrenome: new FormControl(null),\n      documento: new FormControl(null),\n      pais: new FormControl(null),\n      endereco: new FormControl(null),\n      carro: new FormControl(null),\n      carroId: new FormControl(null)\n    });\n  }\n}\n",
+      "<div class=\"container p-5\">\n  <div class=\"row\">\n    <div class=\"col-6 border-light rounded p-5 shadow\" *ngIf=\"formulario\">\n\n    </div>\n  </div>\n</div>\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}
