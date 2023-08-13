@@ -8,6 +8,9 @@ Com relação 1:1, UM cliente pode estacionar UM carro, levando em consideraçã
 ![e3f1c18d-20a6-40f9-8675-bdb688dd1944](https://github.com/bielgennaro/BryanParkingLot/assets/102267952/ff509b18-b1e2-492d-b08c-b57a6a4e82d8)
 
 
+![WhatsApp Image 2023-08-13 at 19 54 50](https://github.com/bielgennaro/BryanParkingLot/assets/102267952/00401eae-ee8a-453b-88cd-a1ea4d31c2c9)
+
+
 ## Stack utilizada
 
 **Front-end:** Angular
@@ -41,6 +44,10 @@ Entre no diretório do projeto
 
 ```bash
   cd BryanParkingLot
+```
+
+```bash
+  cd ClientApp/npm install
 ```
 
 Rode um build
