@@ -16,13 +16,13 @@ public class CarrosController : ControllerBase
     {
         this._context = _context;
     }
-    
+
     [HttpGet("list")]
     public async Task<ActionResult<IEnumerable<Carro>>> GetCarros()
     {
         return await _context.Carros.ToListAsync();
     }
-    
+
     [HttpGet("list/{id:int}")]
     public async Task<ActionResult<Carro>> GetCarro(int id)
     {
@@ -35,7 +35,7 @@ public class CarrosController : ControllerBase
 
         return carro;
     }
-    
+
     [HttpPost("create")]
     public async Task<ActionResult<Carro>> PostCarro(Carro carro)
     {
@@ -44,7 +44,7 @@ public class CarrosController : ControllerBase
 
         return CreatedAtAction("GetCarro", new { id = carro.Id }, carro);
     }
-    
+
     [HttpPut("update/{id:int}")]
     public async Task<IActionResult> PutCarro(int id, Carro carro)
     {
@@ -65,15 +65,13 @@ public class CarrosController : ControllerBase
             {
                 return NotFound();
             }
-            else
-            {
-                throw;
-            }
+
+            throw;
         }
 
         return NoContent();
     }
-    
+
     [HttpDelete("delete/{id}")]
     public async Task<IActionResult> DeleteCarro(int id)
     {
@@ -88,7 +86,7 @@ public class CarrosController : ControllerBase
 
         return Ok();
     }
-    
+
     private bool CarroExists(int id)
     {
         return _context.Carros.Any(e => e.Id == id);

@@ -4,7 +4,7 @@
     <h6 class="text-center">{{tituloFormulario}}</h6>
     <hr/>
 
-    <form [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
+    <form (ngSubmit)="EnviarFormulario()" [formGroup]="formulario">
       <div class="form-group">
         <label>Nome</label>
         <input class="form-control form-control-sm" formControlName="nome" type="text">
@@ -39,7 +39,8 @@
       </div>
       <div class="form-group">
         <label>Estacionado?</label>
-        <input placeholder="(1 = sim, 0 = não)" class="form-control form-control-sm" formControlName="estacionado" type="text">
+        <input class="form-control form-control-sm" formControlName="estacionado" placeholder="(1 = sim, 0 = não)"
+               type="text">
       </div>
       <div class="text-center mt-4">
         <button class="btn btn-sm btn-secondary" type="submit">Registrar</button>

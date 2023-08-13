@@ -1,1 +1,41 @@
-{"ast":null,"code":"import { HttpHeaders } from \"@angular/common/http\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\nexport class CarrosService {\n  constructor(http) {\n    this.http = http;\n    this.url = \"https://localhost:7137/api/carros\";\n  }\n  getCarros() {\n    return this.http.get(this.url);\n  }\n  getCarroById(id) {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.get(apiUrl);\n  }\n  createCarro(carro) {\n    return this.http.post(this.url, carro, HttpOptions);\n  }\n  updateCarro(carro) {\n    return this.http.put(this.url, carro, HttpOptions);\n  }\n  deleteCarro(id) {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.delete(apiUrl, HttpOptions);\n  }\n}\nCarrosService.ɵfac = function CarrosService_Factory(t) {\n  return new (t || CarrosService)(i0.ɵɵinject(i1.HttpClient));\n};\nCarrosService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: CarrosService,\n  factory: CarrosService.ɵfac,\n  providedIn: 'root'\n});","map":{"version":3,"mappings":"AACA,SAAoBA,WAAW,QAAO,sBAAsB;;;AAI5D,MAAMC,WAAW,GAAG;EAClBC,OAAO,EAAE,IAAIF,WAAW,CAAC;IACvB,cAAc,EAAE;GACjB;CACF;AAKD,OAAM,MAAOG,aAAa;EAIxBC,YAAoBC,IAAgB;IAAhB,SAAI,GAAJA,IAAI;IAFxB,QAAG,GAAW,mCAAmC;EAGjD;EAEAC,SAAS;IACP,OAAO,IAAI,CAACD,IAAI,CAACE,GAAG,CAAW,IAAI,CAACC,GAAG,CAAC;EAC1C;EAEAC,YAAY,CAACC,EAAU;IACrB,MAAMC,MAAM,GAAG,GAAG,IAAI,CAACH,GAAG,IAAIE,EAAE,EAAE;IAClC,OAAO,IAAI,CAACL,IAAI,CAACE,GAAG,CAASI,MAAM,CAAC;EACtC;EAEAC,WAAW,CAACC,KAAa;IACvB,OAAO,IAAI,CAACR,IAAI,CAACS,IAAI,CAAS,IAAI,CAACN,GAAG,EAAEK,KAAK,EAAEZ,WAAW,CAAC;EAC7D;EAEAc,WAAW,CAACF,KAAa;IACvB,OAAO,IAAI,CAACR,IAAI,CAACW,GAAG,CAAS,IAAI,CAACR,GAAG,EAAEK,KAAK,EAAEZ,WAAW,CAAC;EAC5D;EAEAgB,WAAW,CAACP,EAAU;IACpB,MAAMC,MAAM,GAAG,GAAG,IAAI,CAACH,GAAG,IAAIE,EAAE,EAAE;IAClC,OAAO,IAAI,CAACL,IAAI,CAACa,MAAM,CAASP,MAAM,EAAEV,WAAW,CAAC;EACtD;;AA3BWE,aAAa;mBAAbA,aAAa;AAAA;AAAbA,aAAa;SAAbA,aAAa;EAAAgB,SAAbhB,aAAa;EAAAiB,YAFZ;AAAM","names":["HttpHeaders","HttpOptions","headers","CarrosService","constructor","http","getCarros","get","url","getCarroById","id","apiUrl","createCarro","carro","post","updateCarro","put","deleteCarro","delete","factory","providedIn"],"sourceRoot":"","sources":["C:\\BryanParkingLot\\ClientApp\\src\\app\\carros.service.ts"],"sourcesContent":["import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from \"@angular/common/http\";\nimport {Observable} from \"rxjs\";\nimport {Carros} from \"./Carros\";\n\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class CarrosService {\n\n  url: string = \"https://localhost:7137/api/carros\";\n\n  constructor(private http: HttpClient) {\n  }\n\n  getCarros(): Observable<Carros[]> {\n    return this.http.get<Carros[]>(this.url);\n  }\n\n  getCarroById(id: number): Observable<Carros> {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.get<Carros>(apiUrl);\n  }\n\n  createCarro(carro: Carros): Observable<Carros> {\n    return this.http.post<Carros>(this.url, carro, HttpOptions);\n  }\n\n  updateCarro(carro: Carros): Observable<Carros> {\n    return this.http.put<Carros>(this.url, carro, HttpOptions);\n  }\n\n  deleteCarro(id: number): Observable<number> {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.delete<number>(apiUrl, HttpOptions);\n  }\n}\n"]},"metadata":{},"sourceType":"module","externalDependencies":[]}
+{
+  "ast": null,
+  "code": "import { HttpHeaders } from \"@angular/common/http\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\nexport class CarrosService {\n  constructor(http) {\n    this.http = http;\n    this.url = \"https://localhost:7137/api/carros\";\n  }\n  getCarros() {\n    return this.http.get(this.url);\n  }\n  getCarroById(id) {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.get(apiUrl);\n  }\n  createCarro(carro) {\n    return this.http.post(this.url, carro, HttpOptions);\n  }\n  updateCarro(carro) {\n    return this.http.put(this.url, carro, HttpOptions);\n  }\n  deleteCarro(id) {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.delete(apiUrl, HttpOptions);\n  }\n}\nCarrosService.ɵfac = function CarrosService_Factory(t) {\n  return new (t || CarrosService)(i0.ɵɵinject(i1.HttpClient));\n};\nCarrosService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: CarrosService,\n  factory: CarrosService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAAoBA,WAAW,QAAO,sBAAsB;;;AAI5D,MAAMC,WAAW,GAAG;EAClBC,OAAO,EAAE,IAAIF,WAAW,CAAC;IACvB,cAAc,EAAE;GACjB;CACF;AAKD,OAAM,MAAOG,aAAa;EAIxBC,YAAoBC,IAAgB;IAAhB,SAAI,GAAJA,IAAI;IAFxB,QAAG,GAAW,mCAAmC;EAGjD;EAEAC,SAAS;IACP,OAAO,IAAI,CAACD,IAAI,CAACE,GAAG,CAAW,IAAI,CAACC,GAAG,CAAC;EAC1C;EAEAC,YAAY,CAACC,EAAU;IACrB,MAAMC,MAAM,GAAG,GAAG,IAAI,CAACH,GAAG,IAAIE,EAAE,EAAE;IAClC,OAAO,IAAI,CAACL,IAAI,CAACE,GAAG,CAASI,MAAM,CAAC;EACtC;EAEAC,WAAW,CAACC,KAAa;IACvB,OAAO,IAAI,CAACR,IAAI,CAACS,IAAI,CAAS,IAAI,CAACN,GAAG,EAAEK,KAAK,EAAEZ,WAAW,CAAC;EAC7D;EAEAc,WAAW,CAACF,KAAa;IACvB,OAAO,IAAI,CAACR,IAAI,CAACW,GAAG,CAAS,IAAI,CAACR,GAAG,EAAEK,KAAK,EAAEZ,WAAW,CAAC;EAC5D;EAEAgB,WAAW,CAACP,EAAU;IACpB,MAAMC,MAAM,GAAG,GAAG,IAAI,CAACH,GAAG,IAAIE,EAAE,EAAE;IAClC,OAAO,IAAI,CAACL,IAAI,CAACa,MAAM,CAASP,MAAM,EAAEV,WAAW,CAAC;EACtD;;AA3BWE,aAAa;mBAAbA,aAAa;AAAA;AAAbA,aAAa;SAAbA,aAAa;EAAAgB,SAAbhB,aAAa;EAAAiB,YAFZ;AAAM",
+    "names": [
+      "HttpHeaders",
+      "HttpOptions",
+      "headers",
+      "CarrosService",
+      "constructor",
+      "http",
+      "getCarros",
+      "get",
+      "url",
+      "getCarroById",
+      "id",
+      "apiUrl",
+      "createCarro",
+      "carro",
+      "post",
+      "updateCarro",
+      "put",
+      "deleteCarro",
+      "delete",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\carros.service.ts"
+    ],
+    "sourcesContent": [
+      "import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from \"@angular/common/http\";\nimport {Observable} from \"rxjs\";\nimport {Carros} from \"./Carros\";\n\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class CarrosService {\n\n  url: string = \"https://localhost:7137/api/carros\";\n\n  constructor(private http: HttpClient) {\n  }\n\n  getCarros(): Observable<Carros[]> {\n    return this.http.get<Carros[]>(this.url);\n  }\n\n  getCarroById(id: number): Observable<Carros> {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.get<Carros>(apiUrl);\n  }\n\n  createCarro(carro: Carros): Observable<Carros> {\n    return this.http.post<Carros>(this.url, carro, HttpOptions);\n  }\n\n  updateCarro(carro: Carros): Observable<Carros> {\n    return this.http.put<Carros>(this.url, carro, HttpOptions);\n  }\n\n  deleteCarro(id: number): Observable<number> {\n    const apiUrl = `${this.url}/${id}`;\n    return this.http.delete<number>(apiUrl, HttpOptions);\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

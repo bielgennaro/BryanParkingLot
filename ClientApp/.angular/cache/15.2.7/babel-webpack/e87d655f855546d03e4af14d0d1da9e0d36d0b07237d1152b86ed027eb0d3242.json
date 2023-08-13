@@ -1,1 +1,31 @@
-{"ast":null,"code":"import { HttpHeaders } from \"@angular/common/http\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\nexport class ClientesService {\n  constructor(http) {\n    this.http = http;\n    this.url = \"https://localhost:5001/api/clientes\";\n  }\n  getClientes() {\n    return this.http.get(this.url);\n  }\n}\nClientesService.ɵfac = function ClientesService_Factory(t) {\n  return new (t || ClientesService)(i0.ɵɵinject(i1.HttpClient));\n};\nClientesService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: ClientesService,\n  factory: ClientesService.ɵfac,\n  providedIn: 'root'\n});","map":{"version":3,"mappings":"AACA,SAAoBA,WAAW,QAAO,sBAAsB;;;AAI5D,MAAMC,WAAW,GAAG;EAClBC,OAAO,EAAE,IAAIF,WAAW,CAAC;IACvB,cAAc,EAAE;GACjB;CACF;AAKD,OAAM,MAAOG,eAAe;EAI1BC,YAAoBC,IAAgB;IAAhB,SAAI,GAAJA,IAAI;IAFxB,QAAG,GAAW,qCAAqC;EAGnD;EAEAC,WAAW;IACT,OAAO,IAAI,CAACD,IAAI,CAACE,GAAG,CAAU,IAAI,CAACC,GAAG,CAAC;EACzC;;AATWL,eAAe;mBAAfA,eAAe;AAAA;AAAfA,eAAe;SAAfA,eAAe;EAAAM,SAAfN,eAAe;EAAAO,YAFd;AAAM","names":["HttpHeaders","HttpOptions","headers","ClientesService","constructor","http","getClientes","get","url","factory","providedIn"],"sourceRoot":"","sources":["C:\\BryanParkingLot\\ClientApp\\src\\app\\clientes.service.ts"],"sourcesContent":["import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from \"@angular/common/http\";\nimport {Observable} from \"rxjs\";\nimport {Cliente} from \"./Cliente\";\n\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClientesService {\n\n  url: string = \"https://localhost:5001/api/clientes\";\n\n  constructor(private http: HttpClient) {\n  }\n\n  getClientes(): Observable<Clientes[]> {\n    return this.http.get<Cliente>(this.url);\n  }\n}\n"]},"metadata":{},"sourceType":"module","externalDependencies":[]}
+{
+  "ast": null,
+  "code": "import { HttpHeaders } from \"@angular/common/http\";\nimport * as i0 from \"@angular/core\";\nimport * as i1 from \"@angular/common/http\";\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\nexport class ClientesService {\n  constructor(http) {\n    this.http = http;\n    this.url = \"https://localhost:5001/api/clientes\";\n  }\n  getClientes() {\n    return this.http.get(this.url);\n  }\n}\nClientesService.ɵfac = function ClientesService_Factory(t) {\n  return new (t || ClientesService)(i0.ɵɵinject(i1.HttpClient));\n};\nClientesService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({\n  token: ClientesService,\n  factory: ClientesService.ɵfac,\n  providedIn: 'root'\n});",
+  "map": {
+    "version": 3,
+    "mappings": "AACA,SAAoBA,WAAW,QAAO,sBAAsB;;;AAI5D,MAAMC,WAAW,GAAG;EAClBC,OAAO,EAAE,IAAIF,WAAW,CAAC;IACvB,cAAc,EAAE;GACjB;CACF;AAKD,OAAM,MAAOG,eAAe;EAI1BC,YAAoBC,IAAgB;IAAhB,SAAI,GAAJA,IAAI;IAFxB,QAAG,GAAW,qCAAqC;EAGnD;EAEAC,WAAW;IACT,OAAO,IAAI,CAACD,IAAI,CAACE,GAAG,CAAU,IAAI,CAACC,GAAG,CAAC;EACzC;;AATWL,eAAe;mBAAfA,eAAe;AAAA;AAAfA,eAAe;SAAfA,eAAe;EAAAM,SAAfN,eAAe;EAAAO,YAFd;AAAM",
+    "names": [
+      "HttpHeaders",
+      "HttpOptions",
+      "headers",
+      "ClientesService",
+      "constructor",
+      "http",
+      "getClientes",
+      "get",
+      "url",
+      "factory",
+      "providedIn"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\clientes.service.ts"
+    ],
+    "sourcesContent": [
+      "import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from \"@angular/common/http\";\nimport {Observable} from \"rxjs\";\nimport {Cliente} from \"./Cliente\";\n\nconst HttpOptions = {\n  headers: new HttpHeaders({\n    'Content-Type': 'application/json'\n  })\n};\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClientesService {\n\n  url: string = \"https://localhost:5001/api/clientes\";\n\n  constructor(private http: HttpClient) {\n  }\n\n  getClientes(): Observable<Clientes[]> {\n    return this.http.get<Cliente>(this.url);\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

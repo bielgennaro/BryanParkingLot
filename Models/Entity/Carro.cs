@@ -4,7 +4,7 @@ namespace BryanParkingLot.Models;
 
 public class Carro
 {
-    public Carro( string marca, string modelo, string placa, bool estacionado, DateTime dataEntrada, DateTime? dataSaida)
+    public Carro(string marca, string modelo, string placa, bool estacionado, DateTime dataEntrada, DateTime? dataSaida)
     {
         Marca = marca;
         Modelo = modelo;
@@ -13,13 +13,13 @@ public class Carro
         DataEntrada = dataEntrada;
         DataSaida = dataSaida;
     }
-    
+
     public Carro()
     {
     }
-    
+
     public int Id { get; set; }
-     public string Marca { get; set; }
+    public string Marca { get; set; }
     public string Modelo { get; set; }
     public string Placa { get; set; }
     public bool Estacionado { get; set; }

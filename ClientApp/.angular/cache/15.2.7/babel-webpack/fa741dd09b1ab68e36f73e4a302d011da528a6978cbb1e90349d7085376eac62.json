@@ -1,1 +1,36 @@
-{"ast":null,"code":"import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nimport { FormControl, FormGroup } from \"@angular/forms\";\nlet CarrosComponent = class CarrosComponent {\n  constructor() {\n    this.tituloFormulario = \"Formulario de Carros\";\n  }\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      marca: new FormControl(null),\n      modelo: new FormControl(null),\n      estacionado: new FormControl(null),\n      dataEntrada: new FormControl(null),\n      dataSaida: new FormControl(null),\n      cliente: new FormControl(null)\n    });\n  }\n};\nCarrosComponent = __decorate([Component({\n  selector: 'app-carros',\n  templateUrl: './carros.component.html',\n  styleUrls: ['./carros.component.css']\n})], CarrosComponent);\nexport { CarrosComponent };","map":{"version":3,"mappings":";AAAA,SAAQA,SAAS,QAAe,eAAe;AAC/C,SAAQC,WAAW,EAAEC,SAAS,QAAO,gBAAgB;AAO9C,IAAMC,eAAe,GAArB,MAAMA,eAAe;EAK1BC;IAFA,qBAAgB,GAAW,sBAAsB;EAGjD;EAEAC,QAAQ;IACN,IAAI,CAACC,UAAU,GAAG,IAAIJ,SAAS,CAAC;MAC9BK,KAAK,EAAE,IAAIN,WAAW,CAAC,IAAI,CAAC;MAC5BO,MAAM,EAAE,IAAIP,WAAW,CAAC,IAAI,CAAC;MAC7BQ,WAAW,EAAE,IAAIR,WAAW,CAAC,IAAI,CAAC;MAClCS,WAAW,EAAE,IAAIT,WAAW,CAAC,IAAI,CAAC;MAClCU,SAAS,EAAE,IAAIV,WAAW,CAAC,IAAI,CAAC;MAChCW,OAAO,EAAE,IAAIX,WAAW,CAAC,IAAI;KAC9B,CAAC;EACJ;CACD;AAlBYE,eAAe,eAL3BH,SAAS,CAAC;EACTa,QAAQ,EAAE,YAAY;EACtBC,WAAW,EAAE,yBAAyB;EACtCC,SAAS,EAAE,CAAC,wBAAwB;CACrC,CAAC,GACWZ,eAAe,CAkB3B;SAlBYA,eAAe","names":["Component","FormControl","FormGroup","CarrosComponent","constructor","ngOnInit","formulario","marca","modelo","estacionado","dataEntrada","dataSaida","cliente","selector","templateUrl","styleUrls"],"sourceRoot":"","sources":["C:\\BryanParkingLot\\ClientApp\\src\\app\\components\\carros\\carros.component.ts"],"sourcesContent":["import {Component, OnInit} from '@angular/core';\nimport {FormControl, FormGroup} from \"@angular/forms\";\n\n@Component({\n  selector: 'app-carros',\n  templateUrl: './carros.component.html',\n  styleUrls: ['./carros.component.css']\n})\nexport class CarrosComponent implements OnInit {\n\n  formulario: any;\n  tituloFormulario: string = \"Formulario de Carros\";\n\n  constructor() {\n  }\n\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      marca: new FormControl(null),\n      modelo: new FormControl(null),\n      estacionado: new FormControl(null),\n      dataEntrada: new FormControl(null),\n      dataSaida: new FormControl(null),\n      cliente: new FormControl(null)\n    })\n  }\n}\n"]},"metadata":{},"sourceType":"module","externalDependencies":[]}
+{
+  "ast": null,
+  "code": "import { __decorate } from \"tslib\";\nimport { Component } from '@angular/core';\nimport { FormControl, FormGroup } from \"@angular/forms\";\nlet CarrosComponent = class CarrosComponent {\n  constructor() {\n    this.tituloFormulario = \"Formulario de Carros\";\n  }\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      marca: new FormControl(null),\n      modelo: new FormControl(null),\n      estacionado: new FormControl(null),\n      dataEntrada: new FormControl(null),\n      dataSaida: new FormControl(null),\n      cliente: new FormControl(null)\n    });\n  }\n};\nCarrosComponent = __decorate([Component({\n  selector: 'app-carros',\n  templateUrl: './carros.component.html',\n  styleUrls: ['./carros.component.css']\n})], CarrosComponent);\nexport { CarrosComponent };",
+  "map": {
+    "version": 3,
+    "mappings": ";AAAA,SAAQA,SAAS,QAAe,eAAe;AAC/C,SAAQC,WAAW,EAAEC,SAAS,QAAO,gBAAgB;AAO9C,IAAMC,eAAe,GAArB,MAAMA,eAAe;EAK1BC;IAFA,qBAAgB,GAAW,sBAAsB;EAGjD;EAEAC,QAAQ;IACN,IAAI,CAACC,UAAU,GAAG,IAAIJ,SAAS,CAAC;MAC9BK,KAAK,EAAE,IAAIN,WAAW,CAAC,IAAI,CAAC;MAC5BO,MAAM,EAAE,IAAIP,WAAW,CAAC,IAAI,CAAC;MAC7BQ,WAAW,EAAE,IAAIR,WAAW,CAAC,IAAI,CAAC;MAClCS,WAAW,EAAE,IAAIT,WAAW,CAAC,IAAI,CAAC;MAClCU,SAAS,EAAE,IAAIV,WAAW,CAAC,IAAI,CAAC;MAChCW,OAAO,EAAE,IAAIX,WAAW,CAAC,IAAI;KAC9B,CAAC;EACJ;CACD;AAlBYE,eAAe,eAL3BH,SAAS,CAAC;EACTa,QAAQ,EAAE,YAAY;EACtBC,WAAW,EAAE,yBAAyB;EACtCC,SAAS,EAAE,CAAC,wBAAwB;CACrC,CAAC,GACWZ,eAAe,CAkB3B;SAlBYA,eAAe",
+    "names": [
+      "Component",
+      "FormControl",
+      "FormGroup",
+      "CarrosComponent",
+      "constructor",
+      "ngOnInit",
+      "formulario",
+      "marca",
+      "modelo",
+      "estacionado",
+      "dataEntrada",
+      "dataSaida",
+      "cliente",
+      "selector",
+      "templateUrl",
+      "styleUrls"
+    ],
+    "sourceRoot": "",
+    "sources": [
+      "C:\\BryanParkingLot\\ClientApp\\src\\app\\components\\carros\\carros.component.ts"
+    ],
+    "sourcesContent": [
+      "import {Component, OnInit} from '@angular/core';\nimport {FormControl, FormGroup} from \"@angular/forms\";\n\n@Component({\n  selector: 'app-carros',\n  templateUrl: './carros.component.html',\n  styleUrls: ['./carros.component.css']\n})\nexport class CarrosComponent implements OnInit {\n\n  formulario: any;\n  tituloFormulario: string = \"Formulario de Carros\";\n\n  constructor() {\n  }\n\n  ngOnInit() {\n    this.formulario = new FormGroup({\n      marca: new FormControl(null),\n      modelo: new FormControl(null),\n      estacionado: new FormControl(null),\n      dataEntrada: new FormControl(null),\n      dataSaida: new FormControl(null),\n      cliente: new FormControl(null)\n    })\n  }\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module",
+  "externalDependencies": []
+}

@@ -6,7 +6,7 @@ namespace BryanParkingLot.Models;
 
 public class Cliente
 {
-    public Cliente( string nome, string sobrenome, string documento, string pais, Carro carro, string endereco)
+    public Cliente(string nome, string sobrenome, string documento, string pais, Carro carro, string endereco)
     {
         Nome = nome;
         Sobrenome = sobrenome;
@@ -15,7 +15,7 @@ public class Cliente
         Carro = carro;
         Endereco = endereco;
     }
-    
+
     public Cliente()
     {
     }

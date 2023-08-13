@@ -7,7 +7,7 @@ namespace BryanParkingLot.Models
     {
         public void Configure(EntityTypeBuilder<Carro> builder)
         {
-            builder.ToTable("Carros"); 
+            builder.ToTable("Carros");
 
             builder.HasKey(c => c.Id);
 

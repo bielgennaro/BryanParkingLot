@@ -20,7 +20,7 @@ namespace BryanParkingLot.Models
             builder.Property(c => c.Pais);
 
             builder.Property(c => c.Endereco);
-            
+
             builder.HasOne(c => c.Carro)
                 .WithOne(c => c.Cliente)
                 .HasForeignKey<Carro>(c => c.ClienteId)

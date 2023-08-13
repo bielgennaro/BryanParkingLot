@@ -15,14 +15,13 @@ public class ClientesController : ControllerBase
     {
         this._context = _context;
     }
-    
+
     [HttpGet("list")]
     public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
     {
-        
         return await _context.Clientes.ToListAsync();
     }
-    
+
     [HttpGet("list/{id:int}")]
     public async Task<ActionResult<Cliente>> GetCliente(int id)
     {
@@ -35,21 +34,22 @@ public class ClientesController : ControllerBase
 
         return cliente;
     }
-    
+
     [HttpPost("create")]
     public async Task<ActionResult<Cliente>> PostCliente(CreateClientRequest clienteRequest)
     {
         var carro = new Carro(clienteRequest.Carro.Marca, clienteRequest.Carro.Modelo, clienteRequest.Carro.Placa,
             clienteRequest.Carro.Estacionado, clienteRequest.Carro.DataEntrada, clienteRequest.Carro.DataSaida);
-        
-        var cliente = new Cliente(clienteRequest.Nome, clienteRequest.Sobrenome, clienteRequest.Documento, clienteRequest.Pais, carro, clienteRequest.Endereco);
-        
+
+        var cliente = new Cliente(clienteRequest.Nome, clienteRequest.Sobrenome, clienteRequest.Documento,
+            clienteRequest.Pais, carro, clienteRequest.Endereco);
+
         await _context.Clientes.AddAsync(cliente);
         await _context.SaveChangesAsync();
 
-        return Ok(new {clienteId = cliente.Id});
+        return Ok(new { clienteId = cliente.Id });
     }
-    
+
     [HttpPut("update/{id:int}")]
     public async Task<IActionResult> PutCliente(int id, Cliente cliente)
     {
@@ -70,15 +70,13 @@ public class ClientesController : ControllerBase
             {
                 return NotFound();
             }
-            else
-            {
-                throw;
-            }
+
+            throw;
         }
 
         return NoContent();
     }
-    
+
     [HttpDelete("delete/{id:int}")]
     public async Task<IActionResult> DeleteCliente(int id)
     {
@@ -93,7 +91,7 @@ public class ClientesController : ControllerBase
 
         return NoContent();
     }
-    
+
     private bool ClienteExists(int id)
     {
         return _context.Clientes.Any(e => e.Id == id);

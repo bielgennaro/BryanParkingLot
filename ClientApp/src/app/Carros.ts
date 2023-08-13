@@ -7,7 +7,7 @@ export class Carros {
   dataEntrada: Date;
   dataSaida: Date;
   cliente: Cliente;
-  placa:string;
+  placa: string;
   clienteId: number;
 
   constructor() {
