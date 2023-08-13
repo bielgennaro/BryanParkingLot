@@ -51,17 +51,34 @@ public class ClientesController : ControllerBase
     }
 
     [HttpPut("update/{id:int}")]
-    public async Task<IActionResult> PutCliente(int id, Cliente cliente)
+    public async Task<IActionResult> UpdateCliente(int id, CreateClientRequest clienteRequest)
     {
-        if (id != cliente.Id)
+        var existingCliente = await _context.Clientes.FindAsync(id);
+
+        if (existingCliente == null)
         {
-            return BadRequest();
+            return NotFound();
         }
 
-        _context.Entry(cliente).State = EntityState.Modified;
+        var updatedCarro = new Carro(
+            clienteRequest.Carro.Marca,
+            clienteRequest.Carro.Modelo,
+            clienteRequest.Carro.Placa,
+            clienteRequest.Carro.Estacionado,
+            clienteRequest.Carro.DataEntrada,
+            clienteRequest.Carro.DataSaida
+        );
+
+        existingCliente.Nome = clienteRequest.Nome;
+        existingCliente.Sobrenome = clienteRequest.Sobrenome;
+        existingCliente.Documento = clienteRequest.Documento;
+        existingCliente.Pais = clienteRequest.Pais;
+        existingCliente.Carro = updatedCarro;
+        existingCliente.Endereco = clienteRequest.Endereco;
 
         try
         {
+            _context.Update(existingCliente);
             await _context.SaveChangesAsync();
         }
         catch (DbUpdateConcurrencyException)
@@ -74,7 +91,7 @@ public class ClientesController : ControllerBase
             throw;
         }
 
-        return NoContent();
+        return Ok();
     }
 
     [HttpDelete("delete/{id:int}")]
@@ -87,9 +104,16 @@ public class ClientesController : ControllerBase
         }
 
         _context.Clientes.Remove(cliente);
-        await _context.SaveChangesAsync();
 
-        return NoContent();
+        try
+        {
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Ocorreu um erro ao excluir o cliente: {ex.Message}");
+        }
     }
 
     private bool ClienteExists(int id)
